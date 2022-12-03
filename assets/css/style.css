@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+    background-color: aqua;
+}
+
+.container {
+
+}
+
+.vertical-left {
+    position: relative;
+    left: 0;
+}
+
+.vertical-center {
+    position: relative;
+    left: 35%;
+}
+
+.vertical-right {
+    position: relative;
+    left: 75%;
+}
