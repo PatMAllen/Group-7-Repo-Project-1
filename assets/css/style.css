@@ -8,21 +8,55 @@ header {
     background-color: aqua;
 }
 
-.container {
+div {
+    float: left;
+}
 
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px;
+}
+
+.button {
+    background-color: lightblue;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.button:hover {
+    background-color: aqua;
+}
+
+/* Adds the scrolling feature for the character list */
+div.scroll {
+    background-color: lightblue;
+    width: 150px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.list-left {
+    position: relative;
 }
 
 .vertical-left {
     position: relative;
-    left: 0;
 }
 
 .vertical-center {
     position: relative;
-    left: 35%;
 }
 
 .vertical-right {
     position: relative;
-    left: 75%;
 }
