@@ -8,22 +8,13 @@ header {
     background-color: aqua;
 }
 
-div {
-    float: left;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    height: 300px;
-}
-
 .button {
+    display: flex;
     background-color: lightblue;
     border: none;
     color: rgb(0, 0, 0);
-    padding: 10px 10px;
+    padding: 6px 6px;
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -43,20 +34,40 @@ div.scroll {
     overflow-y: auto;
     text-align: center;
     padding: 20px;
+    margin: 10px;
 }
 
-.list-left {
-    position: relative;
+.vertical-left-top {
+    display: inline-block;
+    width: 33.3%;
 }
 
-.vertical-left {
-    position: relative;
+.vertical-center-top {
+    display: inline-block;
+    width: 33.3%;
 }
 
-.vertical-center {
-    position: relative;
+.vertical-right-top {
+    display: inline-block;
+    width: 33.3%;
 }
 
-.vertical-right {
-    position: relative;
+.vertical-left-bottom {
+    display: inline-block;
+
+}
+
+.vertical-center-bottom {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.vertical-right-bottom {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.vertical-center-bottomer {
+    display: inline;
+    width: 33.3%;
 }
