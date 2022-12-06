@@ -4,6 +4,7 @@
 var nameEl = document.getElementById('character-name');
 var bioEl = document.getElementById('character-bio');
 var thumbNailEl = document.getElementById('char-thumbnail');
+var characterSearchInput = document.querySelector('#character-input');
 
 function getAllMarvelCharactersByName(){
     var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
@@ -18,6 +19,7 @@ function getAllMarvelCharactersByName(){
 
 };
 
+// need to be able to place searched for name in url
 function getCharacterByName(){
     var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?name=Hulk&ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
 
