@@ -37,40 +37,31 @@ div.scroll {
     margin: 10px;
 }
 
-/* Aligns items */
-
-/* Attempting to make this line give space between the button and character name. If applied to the button however it messes up the whole layout */
-/* .left-top {
-    display: inline-block;
-    width: 30%;
-} */
-
-.center-top {
-    display: inline-block;
-    width: 30%;
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-.right-top {
-    display: inline-block;
-    width: 30%;
+.main-container section {
+    width: 320px;
+    max-width: calc(100% - 672px);
+    width: 100%;
+    background-color: azure;
+    margin-bottom: 16px;
 }
 
-.left-bottom {
-    display: inline-block;
-    width: 30%;
+.main-container aside {
+    width: 320px;
+    max-width: 450px;
+    background: grey;
+    margin-bottom: 16px;
 }
 
-.center-bottom {
-    display: inline-block;
-    width: 30%;
-}
-
-.right-bottom {
-    display: inline-block;
-    width: 30%;
-}
-
-.center-bottomer {
-    display: inline;
-    width: 33.3%;
+@media screen and (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
