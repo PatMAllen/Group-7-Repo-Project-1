@@ -8,21 +8,60 @@ header {
     background-color: aqua;
 }
 
-.container {
-
+.button {
+    display: flex;
+    background-color: lightblue;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 6px 6px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
 }
 
-.vertical-left {
-    position: relative;
-    left: 0;
+.button:hover {
+    background-color: aqua;
 }
 
-.vertical-center {
-    position: relative;
-    left: 35%;
+/* Adds the scrolling feature for the character list */
+div.scroll {
+    background-color: lightblue;
+    width: 150px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
 }
 
-.vertical-right {
-    position: relative;
-    left: 75%;
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.main-container section {
+    width: 320px;
+    max-width: calc(100% - 672px);
+    width: 100%;
+    background-color: azure;
+    margin-bottom: 16px;
+}
+
+.main-container aside {
+    width: 320px;
+    max-width: 450px;
+    background: grey;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
