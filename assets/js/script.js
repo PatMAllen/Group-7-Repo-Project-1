@@ -3,17 +3,19 @@
 // var marvel_hash = c782de09ab3d4d512283595db3e5905b;
 var nameEl = document.getElementById('character-name');
 var bioEl = document.getElementById('character-bio');
+var wikiInfoEl = document.getElementById('wiki-info');
 var thumbNailEl = document.getElementById('char-thumbnail');
 var characterSearchInput = document.querySelector('#character-input');
 var searchFormEl = document.querySelector('#search-form');
 
-
+// need to add checks
 var submitHandler = function(event){
     event.preventDefault();
 
     var charName = characterSearchInput.value;
 
     getCharacterByName(charName);
+    getWikiInfo(charName);
 }
 
 
@@ -48,6 +50,19 @@ function getCharacterByName(character_name){
             nameEl.textContent = data.data.results[0].name;
             bioEl.textContent = data.data.results[0].description;
             thumbNailEl.append(thumbnail);
+        })
+};
+
+function getWikiInfo(character_name){
+    var requestUrl = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=' + character_name + '&prop=wikitext%7Cdisplaytitle%7Csubtitle&sectiontitle=%7B%7BPublication%20history%7D%7D&formatversion=2';
+
+    fetch(requestUrl)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data.parse.wikitext);
+            wikiInfoEl.textContent = data.parse.wikitext;
         })
 };
 
