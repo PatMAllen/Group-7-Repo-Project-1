@@ -7,6 +7,7 @@ var wikiInfoEl = document.getElementById('wiki-info');
 var thumbNailEl = document.getElementById('char-thumbnail');
 var characterSearchInput = document.querySelector('#character-input');
 var searchFormEl = document.querySelector('#search-form');
+var thumbnail = document.createElement('img')
 
 // need to add checks
 var submitHandler = function(event){
@@ -20,14 +21,16 @@ var submitHandler = function(event){
 
 
 function getAllMarvelCharactersByName(){
-    var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
+    var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?limit=20&ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
 
     fetch(requestUrl)
         .then(function(response){
             return response.json();
         })
         .then(function(data){
-
+            data.data.results.forEach(element => {
+                console.log(element.name);
+            });
         })
 
 };
@@ -45,14 +48,27 @@ function getCharacterByName(character_name){
             return response.json();
         })
         .then(function(data){
-            var thumbnail = document.createElement('img')
+            var id = data.data.results[0].id;
+            var idUrl = 'https://gateway.marvel.com:443/v1/public/characters/' + id + '&ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b';
+            
+            // var idCheck = fetch(idUrl).then(function(response){
+            //     return response.status;
+            //     });
+            // if (idCheck !== 200){
+            //     console.log('invalid name');
+            //     // do not proceed try again
+            // } else {
+                
+            // }
             thumbnail.src = data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension;
-            console.log(data);
-            console.log(data.data.results[0].name);
-            console.log(data.data.results[0].thumbnail);
+            // console.log(data);
+            // console.log(data.data.results[0].name);
+            // console.log(data.data.results[0].thumbnail);
             nameEl.textContent = data.data.results[0].name;
             bioEl.textContent = data.data.results[0].description;
             thumbNailEl.append(thumbnail);
+
+
         })
 };
 
@@ -66,10 +82,11 @@ function getWikiInfo(character_name){
             return response.json();
         })
         .then(function(data){
-            console.log(data.parse.wikitext);
+            // console.log(data.parse.wikitext);
             wikiInfoEl.textContent = data.parse.wikitext;
         })
 };
 
 searchFormEl.addEventListener('submit', submitHandler);
+// getAllMarvelCharactersByName();
 // getCharacterByName(nameEl);
