@@ -12,13 +12,14 @@ header {
     
 }
 
-.container {
+.container{
 
 }
 
 .vertical-left {
     position: relative;
     left: 0;
+    display:list-item;
 }
 
 .vertical-center {
