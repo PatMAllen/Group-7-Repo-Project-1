@@ -5,7 +5,10 @@ body {
 
 header {
     text-align: center;
-    background-color: aqua;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
 }
 
 .container {
