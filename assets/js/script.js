@@ -14,11 +14,8 @@ var submitHandler = function(event){
     event.preventDefault();
 
     var charName = characterSearchInput.value;
-    var charGot = getCharacterByName(charName);
-    if(charGot === true){
-        getWikiInfo(charName);
-
-    }
+    getCharacterByName(charName);
+    
 }
 
 
@@ -53,6 +50,8 @@ function getCharacterByName(character_name){
             }
         })
         .then(function(data){
+
+            
             if (data.data.total != 0){
 
                 thumbnail.src = data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension;
@@ -62,10 +61,13 @@ function getCharacterByName(character_name){
                 nameEl.textContent = data.data.results[0].name;
                 bioEl.textContent = data.data.results[0].description;
                 thumbNailEl.append(thumbnail);
+
+                // get wiki info if character exists, otherwise won't even try
+                getWikiInfo(character_name);
             } else {
                 console.log("character not available");
                 alert("Character not available, try again.");
-                return;
+    
             }
 
         })
@@ -94,5 +96,3 @@ function getWikiInfo(character_name){
 };
 
 searchFormEl.addEventListener('submit', submitHandler);
-// getAllMarvelCharactersByName();
-// getCharacterByName(nameEl);
