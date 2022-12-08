@@ -33,6 +33,9 @@ function getAllMarvelCharactersByName(){
 };
 
 // need to be able to place searched for name in url
+// check character name against all characters in api to make sure it's valid
+// provide feedback to user if name does not exist.
+// provide alternative text if no description is provided
 function getCharacterByName(character_name){
     // var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?name=Hulk&ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
     var requestUrl = 'https://gateway.marvel.com:443/v1/public/characters?name=' + character_name + '&ts=1812&apikey=d0ef214546c2e9f0b1d4ba6d35921915&hash=c782de09ab3d4d512283595db3e5905b'
@@ -53,6 +56,8 @@ function getCharacterByName(character_name){
         })
 };
 
+
+// need to only allow search of marvel character
 function getWikiInfo(character_name){
     var requestUrl = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=' + character_name + '&prop=wikitext%7Cdisplaytitle%7Csubtitle&sectiontitle=%7B%7BPublication%20history%7D%7D&formatversion=2';
 
