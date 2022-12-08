@@ -14,9 +14,11 @@ var submitHandler = function(event){
     event.preventDefault();
 
     var charName = characterSearchInput.value;
+    var charGot = getCharacterByName(charName);
+    if(charGot === true){
+        getWikiInfo(charName);
 
-    getCharacterByName(charName);
-    getWikiInfo(charName);
+    }
 }
 
 
@@ -32,7 +34,7 @@ function getAllMarvelCharactersByName(){
                 console.log(element.name);
             });
         })
-
+    
 };
 
 // need to be able to place searched for name in url
@@ -60,12 +62,14 @@ function getCharacterByName(character_name){
                 nameEl.textContent = data.data.results[0].name;
                 bioEl.textContent = data.data.results[0].description;
                 thumbNailEl.append(thumbnail);
-
             } else {
                 console.log("character not available");
+                alert("Character not available, try again.");
+                return;
             }
 
         })
+    return true;
 };
 
 
@@ -79,7 +83,13 @@ function getWikiInfo(character_name){
         })
         .then(function(data){
             // console.log(data.parse.wikitext);
-            wikiInfoEl.textContent = data.parse.wikitext;
+            try {
+                wikiInfoEl.textContent = data.parse.wikitext;
+                
+            } catch (error) {
+                console.log(error);
+                alert("Information not available, try again.");
+            }
         })
 };
 
