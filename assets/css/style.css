@@ -1,15 +1,28 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+
 }
 
 header {
     text-align: center;
-    background-color: red;
+    background: linear-gradient(
+        to right,
+        red 5%,
+        red 23%,
+        white 33%,
+        blue    
+    );
     display: flex;
     justify-content: center;
     font-style: italic;
-    
+    ;
+}
+.Title{
+    background: linear-gradient(90deg, blue, red );
+    text-shadow:none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 .container{
@@ -20,14 +33,91 @@ header {
     position: relative;
     left: 0;
     display:list-item;
+    background-color: aqua;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
 }
 
-.vertical-center {
-    position: relative;
-    left: 35%;
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.vertical-right {
-    position: relative;
-    left: 75%;
+h2,h3 {
+    text-align: center;
+}
+
+section div, aside p{
+    padding: 8px
+}
+
+/* Fixes issue with API replacing text causing <h2> element in HTML to be similar to a <p> element */
+#character-name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Code for button style */
+.button {
+    display: flex;
+    background-color: lightblue;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 6px 6px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: aqua;
+}
+
+/* Adds the scrolling feature for the character list */
+div.scroll {
+    background-color: lightblue;
+    max-width: 100%;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Code for style of 3 main columns */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.main-container section {
+    width: 320px;
+    max-width: calc(100% - 700px);
+    width: 100%;
+    background-color: azure;
+    margin-bottom: 16px;
+    border: solid 2px;
+}
+
+.main-container aside {
+    width: 320px;
+    max-width: 450px;
+    background: grey;
+    margin-bottom: 16px;
+    border: solid 2px;
+}
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
