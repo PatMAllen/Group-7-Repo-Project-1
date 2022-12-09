@@ -4,6 +4,8 @@ body {
 
 }
 
+/*header changes*/
+
 header {
     text-align: center;
     background: linear-gradient(
@@ -23,7 +25,9 @@ header {
     text-shadow:none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
+    box-shadow: 10px;
 }
+
 
 .container{
 
@@ -92,6 +96,7 @@ div.scroll {
 
 /* Code for style of 3 main columns */
 .main-container {
+    
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
