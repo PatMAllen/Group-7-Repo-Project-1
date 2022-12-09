@@ -7,7 +7,9 @@ var wikiInfoEl = document.getElementById('wiki-info');
 var thumbNailEl = document.getElementById('char-thumbnail');
 var characterSearchInput = document.querySelector('#character-input');
 var searchFormEl = document.querySelector('#search-form');
-var thumbnail = document.createElement('img')
+var thumbnail = document.createElement('img');
+var charHistory = [];
+var historyEl = document.getElementById('history');
 
 // need to add checks
 var submitHandler = function(event){
@@ -62,8 +64,16 @@ function getCharacterByName(character_name){
                 bioEl.textContent = data.data.results[0].description;
                 thumbNailEl.append(thumbnail);
 
+                if(charHistory.length == 10){
+                    charHistory.pop();
+                }
+                charHistory.unshift(character_name);
+
+                
                 // get wiki info if character exists, otherwise won't even try
                 getWikiInfo(character_name);
+                storeHistory();
+                renderHistory();
             } else {
                 console.log("character not available");
                 alert("Character not available, try again.");
@@ -94,5 +104,35 @@ function getWikiInfo(character_name){
             }
         })
 };
+
+
+function init(){
+
+    var history = JSON.parse(localStorage.getItem("history"));
+    
+    charHistory = history;
+
+    renderHistory();
+}
+
+function renderHistory(){
+      
+  historyEl.innerHTML = "";
+    console.log(charHistory);
+  // Render a new li for each character in history
+  for (var i = 0; i < charHistory.length; i++) {
+    var char = charHistory[i];
+
+    var li = document.createElement("li");
+    li.textContent = char;
+    li.setAttribute("data-index", i);
+
+    historyEl.appendChild(li);
+  }
+}
+
+function storeHistory(){
+    localStorage.setItem("history", JSON.stringify(charHistory));
+}
 
 searchFormEl.addEventListener('submit', submitHandler);
