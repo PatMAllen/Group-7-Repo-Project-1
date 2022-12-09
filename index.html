@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets\css\style.css" />
-    <title>Work in Progress Title</title>
+    <title>Marvel Character Search</title>
   </head>
 
   <body>
@@ -16,7 +16,6 @@
 
       <!-- Handles Left Column -->
       <aside>
-        <!-- Needs stylelized -->
         <div>
           <form id="search-form">
             <label for="character-input">Marvel Character:</label><br>
@@ -24,26 +23,27 @@
             <button class="button" id="search">Search</button>
           </form>
         </div>
+      
         <div class="button">
           <button class="button">Random Character</button>
         </div>
-        <div class="left-bottom">
-          <div class="scroll">
-            <ul id="history">
-            </ul>
-          </div>
+
+        <div class="scroll">
+          <ul class="list-group" id="history"></ul>
         </div>
       </aside>
 
       <!-- Handles Center Column -->
       <section>
         <div id="character-name">
-          <h2>Character Name</h2>
+          <h3>Character Name</h3>
         </div>
+
         <h2><u>Biography</u></h2>
         <div id="character-bio">
           <p>Text Here</p>
         </div>
+
         <h3><u>Other Information</u></h3>
         <div>
           <p>Text Here</p>
@@ -55,14 +55,12 @@
         </div>
       </section>
 
-      <!-- image needs to be adjusted so that it fits on page better -->
-      </section>
-
       <!-- Handles Right Column -->
       <aside>
         <div id="char-thumbnail">
           <h2>Character Image Here</h2>
         </div>
+
         <h3><u>External Links</u></h3>
         <div>
           <p>Links Here</p>
