@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets\css\style.css" />
-    <title>Work in Progress Title</title>
+    <title>Marvel Character Search</title>
   </head>
 
   <body>
@@ -13,75 +13,37 @@
       <h1>Marvel Character Database</h1>
     </header>
     <main class="main-container">
-    
-  <!-- Handles Left Column -->
+
+      <!-- Handles Left Column -->
       <aside>
+        <div>
+          <form id="search-form">
+            <label for="character-input">Marvel Character:</label><br>
+            <input type="text" id="character-input" name="character-input" value="Hulk">
+            <button class="button" id="search">Search</button>
+          </form>
+        </div>
+      
         <div class="button">
           <button class="button">Random Character</button>
         </div>
-        <div class="left-bottom">
-          <div class="scroll">
-            <ul>
-              <p>Name 1</p>
-              <p>Name 2</p>
-              <p>Name 3</p>
-              <p>Name 4</p>
-              <p>Name 5</p>
-              <p>Name 6</p>
-              <p>Name 7</p>
-              <p>Name 8</p>
-              <p>Name 9</p>
-              <p>Name 10</p>
-            </ul>
-          </div>
+
+        <div class="scroll">
+          <ul class="list-group history"></ul>
         </div>
       </aside>
-
-    <div class="container">
-      <div class="vertical-left">
-        <button type="button">Random Character</button>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="vertical-left">
-        <ul>
-          <li>Character 1</li>
-          <li>Character 2</li>
-          <li>Character 3</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="vertical-center" id = "character-name">
-        <h2>Character Name</h2>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="vertical-center">
-        <h3>Character Biography</h3>
-        <p>Text Here</p>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="vertical-center">
-        <h3>Character Info/other sections</h3>
-        <p>Text Here</p>
-      </div>
-    </div>
 
       <!-- Handles Center Column -->
       <section>
         <div id="character-name">
-          <h2>Character Name</h2>
+          <h3>Character Name</h3>
         </div>
+
         <h2><u>Biography</u></h2>
         <div id="character-bio">
           <p>Text Here</p>
         </div>
+
         <h3><u>Other Information</u></h3>
         <div>
           <p>Text Here</p>
@@ -93,6 +55,7 @@
         <div id="char-thumbnail">
           <h2>Character Image Here</h2>
         </div>
+
         <h3><u>External Links</u></h3>
         <div>
           <p>Links Here</p>
