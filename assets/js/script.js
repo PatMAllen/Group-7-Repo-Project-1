@@ -105,7 +105,7 @@ function getWikiInfo(character_name){
         })
 };
 
-
+// history won't persist on page reload
 function init(){
 
     var history = JSON.parse(localStorage.getItem("history"));
@@ -125,7 +125,7 @@ function renderHistory(){
 
     var li = document.createElement("li");
     li.textContent = char;
-    li.setAttribute("data-index", i);
+    // li.setAttribute("data-index", i);
 
     historyEl.appendChild(li);
   }
