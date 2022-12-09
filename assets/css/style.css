@@ -55,6 +55,10 @@ section div, aside p{
     padding: 8px
 }
 
+#search-form {
+    padding: 8px;
+}
+
 /* Fixes issue with API replacing text causing <h2> element in HTML to be similar to a <p> element */
 #character-name {
     text-align: center;
@@ -69,12 +73,12 @@ section div, aside p{
     background-color: lightblue;
     border: none;
     color: rgb(0, 0, 0);
-    padding: 6px 6px;
+    padding: 8px 8px;
     margin: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 26px;
     border-radius: 10px;
 }
 
