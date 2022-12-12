@@ -83,14 +83,8 @@ function getCharacterByName(character_name){
     return true;
 };
 
-<<<<<<< HEAD
 
 // need to only allow search of marvel character
-=======
-// Records search history onto local storage and page list (ADD HERE)
-
-//
->>>>>>> 182deb9c78eb0acae16bc94e811ba76db9ec0437
 function getWikiInfo(character_name){
     var requestUrl = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=' + character_name + '&prop=text%7Cdisplaytitle%7Csubtitle&sectiontitle=%7B%7BPublication%20history%7D%7D&formatversion=2';
 
@@ -112,7 +106,6 @@ function getWikiInfo(character_name){
         })
 };
 
-<<<<<<< HEAD
 // history won't persist on page reload
 function init(){
 
@@ -155,16 +148,3 @@ historyEl.addEventListener('click', function(event) {
         getCharacterByName(char);
     }
 })
-=======
-<<<<<<< HEAD
-getCharacterByName();
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a49e131f3c45030231b991e9aca747104d911ede
-=======
-searchFormEl.addEventListener('submit', submitHandler);
-// getCharacterByName(nameEl);
->>>>>>> main
->>>>>>> 182deb9c78eb0acae16bc94e811ba76db9ec0437
