@@ -17,7 +17,6 @@ var submitHandler = function(event){
 
     var charName = characterSearchInput.value;
     getCharacterByName(charName);
-    
 }
 
 
@@ -110,9 +109,11 @@ function getWikiInfo(character_name){
 // history won't persist on page reload
 function init(){
 
-    var history = JSON.parse(localStorage.getItem("history"));
-    
-    charHistory = history;
+    var storedHistory = JSON.parse(localStorage.getItem("history"));
+    if(storedHistory !== null){
+        charHistory = storedHistory;
+
+    }
 
     renderHistory();
 }
@@ -138,3 +139,12 @@ function storeHistory(){
 }
 
 searchFormEl.addEventListener('submit', submitHandler);
+
+historyEl.addEventListener('click', function(event) {
+    var element = event.target;
+
+    if(element.matches("li") === true){
+        var char = element.textContent;
+        getCharacterByName(char);
+    }
+})
