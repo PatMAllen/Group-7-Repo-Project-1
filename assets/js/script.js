@@ -87,7 +87,7 @@ function getCharacterByName(character_name){
 
 // need to only allow search of marvel character
 function getWikiInfo(character_name){
-    var requestUrl = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=' + character_name + '&prop=wikitext%7Cdisplaytitle%7Csubtitle&sectiontitle=%7B%7BPublication%20history%7D%7D&formatversion=2';
+    var requestUrl = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=' + character_name + '&prop=text%7Cdisplaytitle%7Csubtitle&sectiontitle=%7B%7BPublication%20history%7D%7D&formatversion=2';
 
     fetch(requestUrl)
         .then(function(response){
@@ -96,7 +96,9 @@ function getWikiInfo(character_name){
         .then(function(data){
             // console.log(data.parse.wikitext);
             try {
-                wikiInfoEl.textContent = data.parse.wikitext;
+                wikiInfoEl.textContent = " ";
+                wikiInfoEl.insertAdjacentHTML('beforeend', data.parse.text);
+               // wikiInfoEl.append(data.parse.text);
                 
             } catch (error) {
                 console.log(error);
