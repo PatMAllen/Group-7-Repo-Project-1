@@ -126,11 +126,10 @@ function renderHistory(){
   for (var i = 0; i < charHistory.length; i++) {
     var char = charHistory[i];
 
-    var li = document.createElement("li");
-    li.textContent = char;
-    // li.setAttribute("data-index", i);
+    var btn = document.createElement("btn");
+    btn.textContent = char;
 
-    historyEl.appendChild(li);
+    historyEl.appendChild(btn);
   }
 }
 
@@ -143,7 +142,7 @@ searchFormEl.addEventListener('submit', submitHandler);
 historyEl.addEventListener('click', function(event) {
     var element = event.target;
 
-    if(element.matches("li") === true){
+    if(element.matches("btn") === true){
         var char = element.textContent;
         getCharacterByName(char);
     }
